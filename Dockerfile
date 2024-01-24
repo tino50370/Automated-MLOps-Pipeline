@@ -5,7 +5,7 @@ FROM tensorflow/tensorflow:latest
 WORKDIR /app
 
 # Copy the Python code from GitHub into the container
-RUN git clone https://github.com/tino50370/Automated-MLOps-Pipeline.git .
+RUN git clone https://github.com/tino50370/Automated-MLOps-Pipeline.git
 
 # Install required Python packages
 RUN pip install pandas scikit-learn numpy keras
