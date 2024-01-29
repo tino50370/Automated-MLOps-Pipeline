@@ -2,7 +2,7 @@
 from keras.datasets import fashion_mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Conv2D, MaxPool2D, Flatten
-from keras.utils import np_utils
+from keras.utils import to_categorical
 from keras.callbacks import Callback
 # to calculate accuracy
 from sklearn.metrics import accuracy_score
@@ -37,8 +37,8 @@ X_test /= 255
 # one-hot encoding using keras' numpy-related utilities
 n_classes = 10
 print("Shape before one-hot encoding: ", y_train.shape)
-Y_train = np_utils.to_categorical(y_train, n_classes)
-Y_test = np_utils.to_categorical(y_test, n_classes)
+Y_train = to_categorical(y_train, num_classes=n_classes)
+Y_test = to_categorical(y_test, num_classes=n_classes)
 print("Shape after one-hot encoding: ", Y_train.shape)
 
 # building a linear stack of layers with the sequential model
