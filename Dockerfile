@@ -2,7 +2,7 @@
 FROM tensorflow/tensorflow:latest
 
 # Install git and bash
-RUN apt-get update && apt-get install -y git bash
+RUN apt-get update && apt-get install -y git
 
 # Set the working directory in the container
 WORKDIR /app
@@ -10,11 +10,8 @@ WORKDIR /app
 # Install required Python packages
 RUN pip install pandas scikit-learn numpy keras
 
-
 # Copy the Python code from GitHub into the container
 RUN git clone https://github.com/tino50370/Automated-MLOps-Pipeline.git .
-
-
 
 # Define environment variable
 ENV NAME World
