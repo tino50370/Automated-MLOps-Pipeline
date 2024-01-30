@@ -2,7 +2,7 @@
 FROM tensorflow/tensorflow:latest
 
 # Install git
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git bash
 
 # Set the working directory in the container
 WORKDIR /app
@@ -18,3 +18,4 @@ ENV NAME World
 
 # Command to run your Python script
 #CMD ["python", "main_code.py"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
