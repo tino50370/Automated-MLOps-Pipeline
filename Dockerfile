@@ -1,7 +1,7 @@
 # Use an official TensorFlow runtime as a parent image
 FROM tensorflow/tensorflow:latest
 
-# Install git and bash
+# Install git
 RUN apt-get update && apt-get install -y git
 
 # Set the working directory in the container
