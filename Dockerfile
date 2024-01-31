@@ -1,8 +1,8 @@
 # Use an official TensorFlow runtime as a parent image
 FROM tensorflow/tensorflow:latest
 
-# Install git
-RUN apt-get update && apt-get install -y git bash
+# Install git, bash and nano
+RUN apt-get update && apt-get install -y git bash nano
 
 # Set the working directory in the container
 WORKDIR /app
