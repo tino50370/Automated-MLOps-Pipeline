@@ -6,19 +6,15 @@ from keras.utils import to_categorical
 from keras.callbacks import Callback
 # to calculate accuracy
 from sklearn.metrics import accuracy_score
-import numpy as np
+#import numpy as np
 
 # class for writing the accuracy in a file
 class myCallback(Callback):
-      def on_epoch_end(self, epoch, logs={}):
-          
-            file='output.txt' 
-            var=logs.get('accuracy')
-            with open(file, 'w') as filetowrite:
-                filetowrite.write(np.array2string(var))
-
-
-
+    def on_epoch_end(self, epoch, logs={}):
+        file = 'output.txt' 
+        var = logs.get('accuracy')
+        with open(file, 'w') as filetowrite:
+            filetowrite.write(str(var))
 
 callbacks = myCallback()
 # loading the dataset
